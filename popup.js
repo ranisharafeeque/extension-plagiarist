@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, 'Sending message');
       }
-    )
+    );
   }
-}, false)
+}, false);
