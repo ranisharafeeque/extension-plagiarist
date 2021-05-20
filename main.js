@@ -26,9 +26,11 @@ chrome.runtime.onMessage.addListener(function (request) {
       document.querySelector('audio').src = '';
     }, 15000);
     
-    const formattedText = selectedText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
-                                      .split(' ')
-                                      .join(('-'));
+    let formattedText = selectedText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+      .trim()
+      .split(' ')
+      .join('+');
+
     const wikipedia = `https://en.wikipedia.org/w/index.php?search=${ formattedText }`;
     alert(`You are being redirected to: ${ wikipedia }`);
   
